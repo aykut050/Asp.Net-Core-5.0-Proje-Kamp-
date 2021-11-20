@@ -1,0 +1,61 @@
+﻿@model EntityLayer.Concrete.Writer
+ 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Register Now</h3>
+        <div class="inner-sec">
+            <div class="login p-5 bg-light mx-auto mw-100">
+                @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">Adınız Soyadınız</label>
+                            @Html.ValidationMessageFor(x=>x.WriterName)
+                            <input type="text" class="form-control" id="validationDefault01" name="WriterName" placeholder="" required="">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom02">Mail Adresi</label>
+                            @Html.ValidationMessageFor(x => x.WriterMail)
+
+                            <input type="email" class="form-control" name="WriterMail" id="validationDefault02" placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1 mb-2">Şifre</label>
+                            @Html.ValidationMessageFor(x => x.WriterPassword)
+
+                            <input type="password" class="form-control" id="password1" name="WriterPassword" placeholder="" required="">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1 mb-2">Dosya</label>
+                            <input type="text" class="form-control" id="password1" name="WriterImage" placeholder="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit mb-4">Register</button>
+                    <p>
+                        <a href="#" id="btn1">By clicking Signup, I agree to your terms</a>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+    <br />
+    <button class="btn btn-info" id="btn1">
+        Button1
+    </button>
+    <script>
+        $('#btn1').click(function () {
+            swal("llo");
+        });
+    </script>
+</section>
+

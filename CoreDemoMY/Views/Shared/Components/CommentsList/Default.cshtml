@@ -1,0 +1,7 @@
+﻿@model IEnumerable<CoreDemoMY.Models.UserComment>
+
+@foreach (var item in Model)
+{
+<p>ID : @item.ID</p>
+ <p>Username: @item.Username</p> 
+}

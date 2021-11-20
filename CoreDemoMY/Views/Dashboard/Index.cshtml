@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/Writer/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Writer/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/Writer/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/Writer/assets/images/favicon.ico" />
+</head>
+<body>
+        <!-- partial:partials/_navbar.html -->
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <!-- partial -->
+            <div>
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h3 class="page-title">
+                            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                                <i class="mdi mdi-home"></i>
+                            </span> Dashboard
+                        </h3>
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-danger card-img-holder text-white">
+                                <div class="card-body">
+                                    <img src="~/Writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                                    <h4 class="font-weight-normal mb-3">
+                                       Toplam Blog Sayısı <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                                    </h4>
+                                    <h2 class="mb-5">@ViewBag.count</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-info card-img-holder text-white">
+                                <div class="card-body">
+                                    <img src="~/Writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                                    <h4 class="font-weight-normal mb-3">
+                                        Yazarın Blog Sayısı <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                                    </h4>
+                                    <h2 class="mb-5">@ViewBag.countWriter</h2>
+                                    <h6 class="card-text">Decreased by 10%</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 stretch-card grid-margin">
+                            <div class="card bg-gradient-success card-img-holder text-white">
+                                <div class="card-body">
+                                    <img src="~/Writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                                    <h4 class="font-weight-normal mb-3">
+                                        Kategori Sayısı <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                                    </h4>
+                                    <h2 class="mb-5">@ViewBag.countCategories</h2>
+                                    <h6 class="card-text">Increased by 5%</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    @await Component.InvokeAsync("BlogListDashboard")
+
+                    @await Component.InvokeAsync("WriterAboutOnDashboard") 
+                    
+                    @await Component.InvokeAsync("CategoryListDashboard") 
+                </div>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/Writer/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/Writer/assets/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/Writer/assets/js/off-canvas.js"></script>
+    <script src="~/Writer/assets/js/hoverable-collapse.js"></script>
+    <script src="~/Writer/assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/Writer/assets/js/dashboard.js"></script>
+    <script src="~/Writer/assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+</body>
+</html>
+
